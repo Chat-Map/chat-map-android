@@ -43,6 +43,8 @@ dependencies {
     implementation(Libs.Compose.viewModel)
     implementation(Libs.Compose.navigation)
     implementation(Libs.Compose.runtime)
+    implementation(Libs.Compose.graphics)
+    implementation(Libs.Compose.googleFonts)
     debugImplementation(Libs.Compose.debug)
 
     // ===== kotlin =====

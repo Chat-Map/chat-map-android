@@ -1,8 +1,8 @@
 package com.chatmap.chats.api
 
-import com.chatmap.common.AggregateFeatureEntry
+import com.chatmap.common.ComposableFeatureEntry
 
-abstract class ChatsEntry : AggregateFeatureEntry {
+abstract class ChatsEntry : ComposableFeatureEntry {
 
     final override val featureRoute: String
         get() = "chats"
