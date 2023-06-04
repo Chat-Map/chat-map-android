@@ -1,8 +1,8 @@
-import ru.liga.club.Libs
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+
 }
 
 android {
@@ -31,19 +31,29 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_18
+        targetCompatibility = JavaVersion.VERSION_18
     }
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        freeCompilerArgs = listOf("-Xcontext-receivers")
     }
+
+    kotlin {
+        jvmToolchain(18)
+    }
+
     buildFeatures {
         compose = true
+        buildConfig = true
     }
+
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = Libs.Compose.compiler
     }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -52,6 +62,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":chats:impl"))
+    implementation(project(":data:impl"))
+    implementation(project(":common"))
+
     implementation(Libs.AndroidX.core)
     implementation(Libs.AndroidX.lifecycle)
 
@@ -61,6 +75,7 @@ dependencies {
     implementation(Libs.Compose.graphics)
     implementation(Libs.Compose.toolingPreview)
     implementation(Libs.Compose.material)
+    implementation(Libs.Compose.runtime)
 
     implementation(Libs.Compose.navigation)
     implementation(Libs.Compose.viewModel)
@@ -69,8 +84,8 @@ dependencies {
     implementation(Libs.Coroutines.core)
     implementation(Libs.Coroutines.android)
 
-    debugImplementation(Libs.Compose.tooling)
-    debugImplementation(Libs.Compose.manifest)
+    implementation(Libs.Dagger.dagger)
+    kapt(Libs.Dagger.daggerCompiler)
 
-
+    debugImplementation(Libs.Compose.debug)
 }

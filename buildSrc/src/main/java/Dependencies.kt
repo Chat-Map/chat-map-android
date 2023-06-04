@@ -1,5 +1,3 @@
-package ru.liga.club
-
 object Libs {
     object Project {
         const val minSDK = 26
@@ -17,7 +15,7 @@ object Libs {
 
     object Plugins {
         const val gradleVersion = "8.0.1"
-        const val gradle = "com.android.tools.build:gradle:${gradleVersion}"
+        const val gradle = "com.android.tools.build:gradle:$gradleVersion"
         const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.version}"
         const val google = "com.google.gms:google-services:4.3.13"
         const val firebase = "com.google.firebase:firebase-crashlytics-gradle:2.9.1"
@@ -42,19 +40,21 @@ object Libs {
 
     object Compose {
         const val version = "1.4.0"
+        const val compiler = "1.4.3"
         const val bom = "androidx.compose:compose-bom:2023.05.01"
         const val toolingPreview = "androidx.compose.ui:ui-tooling-preview"
         const val ui = "androidx.compose.ui:ui"
         const val util = "androidx.compose.ui:ui-util"
         const val materialIcons = "androidx.compose.material:material-icons-core"
-        const val tooling = "androidx.compose.ui:ui-tooling"
         const val runtime = "androidx.compose.runtime:runtime"
         const val activity = "androidx.activity:activity-compose:1.7.2"
         const val animations = "androidx.compose.animation:animation"
         const val material = "androidx.compose.material3:material3"
         const val graphics = "androidx.compose.ui:ui-graphics"
-        const val manifest = "androidx.compose.ui:ui-test-manifest"
-
+        val debug = listOf(
+            "androidx.compose.ui:ui-tooling",
+            "androidx.compose.ui:ui-test-manifest"
+        )
         const val navigation = "androidx.navigation:navigation-compose:2.5.3"
         const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1"
         const val lifecycle = "androidx.lifecycle:lifecycle-runtime-compose:2.6.1"
