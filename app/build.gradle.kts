@@ -84,6 +84,8 @@ dependencies {
     implementation(Libs.Coroutines.core)
     implementation(Libs.Coroutines.android)
 
+    implementation(Libs.Deps.googleMaterial)
+
     implementation(Libs.Dagger.dagger)
     kapt(Libs.Dagger.daggerCompiler)
 

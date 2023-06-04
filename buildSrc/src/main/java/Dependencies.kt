@@ -50,6 +50,7 @@ object Libs {
         const val activity = "androidx.activity:activity-compose:1.7.2"
         const val animations = "androidx.compose.animation:animation"
         const val material = "androidx.compose.material3:material3"
+        const val googleFonts = "androidx.compose.ui:ui-text-google-fonts"
         const val graphics = "androidx.compose.ui:ui-graphics"
         val debug = listOf(
             "androidx.compose.ui:ui-tooling",
@@ -97,6 +98,7 @@ object Libs {
     }
 
     object Deps {
+        const val googleMaterial = "com.google.android.material:material:1.9.0"
         const val lottie = "com.airbnb.android:lottie:3.4.0"
         const val imageCropper = "com.vanniktech:android-image-cropper:4.3.3"
         const val appIntro = "com.github.AppIntro:AppIntro:6.0.0"
