@@ -1,3 +1,4 @@
+@file:Suppress("UnstableApiUsage")
 pluginManagement {
     repositories {
         google()
@@ -14,3 +15,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "chatmap"
 include(":app")
+include(":common")
+include(":data", ":data:api", ":data:impl")
+include(":chats", ":chats:api", ":chats:impl")
