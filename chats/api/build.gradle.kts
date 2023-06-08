@@ -28,5 +28,4 @@ dependencies {
     implementation(Libs.Compose.material)
     implementation(Libs.Compose.runtime)
     implementation(Libs.Compose.navigation)
-
 }

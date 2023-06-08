@@ -86,6 +86,9 @@ dependencies {
 
     implementation(Libs.Deps.googleMaterial)
 
+    implementation(Libs.Coil.coil)
+    implementation(Libs.Coil.coilCompose)
+
     implementation(Libs.Dagger.dagger)
     kapt(Libs.Dagger.daggerCompiler)
 

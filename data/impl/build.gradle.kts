@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.serialization")
     kotlin("kapt")
 }
 
@@ -31,6 +32,14 @@ dependencies {
 
     implementation(Libs.Coroutines.android)
     implementation(Libs.Coroutines.core)
+
+    implementation(Libs.Ktor.core)
+    implementation(Libs.Ktor.cio)
+    implementation(Libs.Ktor.webSockets)
+    implementation(Libs.Ktor.loggin)
+    implementation(Libs.Ktor.serialization)
+
+    implementation(Libs.Kotlin.serialization)
 
     implementation(Libs.Dagger.dagger)
     kapt(Libs.Dagger.daggerCompiler)

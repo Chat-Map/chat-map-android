@@ -11,6 +11,7 @@ object Libs {
         const val version = "1.8.10"
         const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:$version"
         const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
+        const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0"
     }
 
     object Plugins {
@@ -75,11 +76,13 @@ object Libs {
         const val pagerIndicator = "com.google.accompanist:accompanist-pager-indicators:$version"
     }
 
-    object Retrofit {
-        const val retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
-        const val converterGson = "com.squareup.retrofit2:converter-gson:2.9.0"
-        const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:4.9.3"
-        const val okhttpStetho = "com.facebook.stetho:stetho-okhttp3:1.5.1"
+    object Ktor {
+        private const val ktor_version = "2.3.1"
+        const val core = "io.ktor:ktor-client-core:$ktor_version"
+        const val cio = "io.ktor:ktor-client-cio:$ktor_version"
+        const val serialization = "io.ktor:ktor-serialization-kotlinx-json:$ktor_version"
+        const val webSockets = "io.ktor:ktor-client-websockets:$ktor_version"
+        const val loggin = "io.ktor:ktor-client-logging:$ktor_version"
     }
 
     object YandexMetrics {
@@ -92,7 +95,7 @@ object Libs {
     }
 
     object Coil {
-        const val version = "2.2.2"
+        const val version = "2.4.0"
         const val coil = "io.coil-kt:coil:$version"
         const val coilCompose = "io.coil-kt:coil-compose:$version"
     }

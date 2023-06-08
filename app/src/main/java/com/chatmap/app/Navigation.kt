@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.chatmap.app.di.LocalAppProvider
-import com.chatmap.app.ui.BottomMenuBar
+import com.chatmap.app.ui.BottomBar
 import com.chatmap.chats.api.ChatsEntry
 import com.chatmap.common.find
 
@@ -29,6 +29,6 @@ internal fun Navigation() {
     }
 
     Box(modifier = Modifier.fillMaxHeight(), contentAlignment = Alignment.BottomCenter) {
-        BottomMenuBar(navController, destinations)
+        BottomBar(navController, destinations)
     }
 }
