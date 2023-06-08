@@ -38,6 +38,10 @@ dependencies {
     implementation(Libs.Coroutines.core)
     implementation(Libs.Coroutines.android)
 
+    // ===== coil =====
+    implementation(Libs.Coil.coil)
+    implementation(Libs.Coil.coilCompose)
+
     // ===== dagger =====
     implementation(Libs.Dagger.dagger)
     kapt(Libs.Dagger.daggerCompiler)

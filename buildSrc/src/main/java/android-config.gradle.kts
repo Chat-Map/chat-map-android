@@ -32,7 +32,7 @@ android {
         kotlinOptions {
             jvmTarget = "18"
             freeCompilerArgs = listOf(
-                "-Xopt-in=kotlin.RequiresOptIn"
+                "-Xopt-in=kotlin.RequiresOptIn", "-Xcontext-receivers"
             )
         }
     }

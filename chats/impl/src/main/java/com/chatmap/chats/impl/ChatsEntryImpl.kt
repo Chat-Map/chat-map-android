@@ -1,13 +1,15 @@
 package com.chatmap.chats.impl
 
-import android.util.Log
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavBackStackEntry
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
+import com.chatmap.api.LocalDataProvider
 import com.chatmap.chats.api.ChatsEntry
+import com.chatmap.chats.impl.di.DaggerChatsComponent
+import com.chatmap.chats.impl.ui.ChatsScreen
 import com.chatmap.common.Destinations
+import com.chatmap.common.di.LocalCommonProvider
+import com.chatmap.common.di.injectedViewModel
 import javax.inject.Inject
 
 class ChatsEntryImpl @Inject constructor() : ChatsEntry() {
@@ -19,7 +21,13 @@ class ChatsEntryImpl @Inject constructor() : ChatsEntry() {
         backStackEntry: NavBackStackEntry
     ) {
 
-        Text(text = "Hello")
+        val dataProvider = LocalDataProvider.current
+        val commonProvider = LocalCommonProvider.current
 
+        val viewModel = injectedViewModel {
+            DaggerChatsComponent.factory().create(commonProvider, dataProvider).viewModel
+        }
+
+        ChatsScreen(viewModel = viewModel)
     }
 }

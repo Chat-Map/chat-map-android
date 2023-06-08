@@ -39,6 +39,9 @@ dependencies {
     implementation(Libs.Coroutines.core)
     implementation(Libs.Coroutines.android)
 
+    implementation(Libs.Coil.coil)
+    implementation(Libs.Coil.coilCompose)
+
     implementation(Libs.Dagger.dagger)
     kapt(Libs.Dagger.daggerCompiler)
 }
