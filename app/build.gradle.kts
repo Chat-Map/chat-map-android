@@ -63,6 +63,7 @@ android {
 
 dependencies {
     implementation(project(":chats:impl"))
+    implementation(project(":auth:impl"))
     implementation(project(":data:impl"))
     implementation(project(":common"))
 

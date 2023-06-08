@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.chatmap.app.di.LocalAppProvider
 import com.chatmap.app.ui.BottomBar
+import com.chatmap.auth.api.AuthEntry
 import com.chatmap.chats.api.ChatsEntry
 import com.chatmap.common.find
 
@@ -19,9 +20,13 @@ internal fun Navigation() {
     val destinations = LocalAppProvider.current.destinations
 
     val chatsScreen = destinations.find<ChatsEntry>()
+    val authScreen = destinations.find<AuthEntry>()
 
     Box(modifier = Modifier.fillMaxSize()) {
-        NavHost(navController = navController, startDestination = chatsScreen.featureRoute) {
+        NavHost(navController = navController, startDestination = authScreen.featureRoute) {
+            with(authScreen) {
+                navigation(navController, destinations)
+            }
             with(chatsScreen) {
                 composable(navController, destinations)
             }
